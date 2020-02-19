@@ -1,8 +1,10 @@
 body {
-    background-color: cornflowerblue;
+    background: rgb(93,62,189);
+background: linear-gradient(180deg, rgba(93,62,189,1) 0%, rgba(71,42,158,1) 100%);
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: #363744;
+    cursor: auto;
 }
 
 a {
@@ -22,24 +24,30 @@ a:visited {
     font-weight: 400;
 }
 
+.title {
+    font-weight: 400;
+}
+
 .font-thin-italic {
     font-weight: 300;
     font-style: italic;
 }
 
-.font-normal {
-    font-weight: 500;
-}
-
-h1, h3 {
+h1, h3, p {
     margin: 0;
 }
+
+.company{
+    color: #6d6e70;
+    font-size: 25px;
+}
+
 
 body > .container {
     width: 900px;
     background-color: white;
-    margin: 0px auto;
-    padding: 20px;
+    margin: 50px auto;
+    padding: 30px;
     box-shadow: 0 0 25px 0 rgba(0,0,0,0.50);
 }
 
@@ -48,7 +56,7 @@ body > .container {
 }
 
 .header-title {
-    margin-top: -13px;
+    margin-top: -10px;
 }
 
 .title-header {
@@ -71,4 +79,40 @@ section {
     margin: 20px 0px 20px 0px;
     font-weight: 300;
     
+}
+
+.job-header {
+    font-weight: 500;
+}
+
+@media screen and (max-width: 900px) {
+    body > .container {
+        width: 100%;
+        box-shadow: none;
+    margin: 0;
+
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .title-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .info-container {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .job-header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dash {
+        display: none;
+    }
 }
