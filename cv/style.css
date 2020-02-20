@@ -20,9 +20,9 @@ a:visited {
     text-decoration: none;
 }
 
-.font-thin {
+/* .font-thin {
     font-weight: 400;
-}
+} */
 
 .title {
     font-weight: 400;
@@ -51,9 +51,9 @@ body > .container {
     box-shadow: 0 0 25px 0 rgba(0,0,0,0.50);
 }
 
-.container .cv-header {
+/* .container .cv-header {
     margin: 1px;
-}
+} */
 
 .header-title {
     margin-top: -10px;
@@ -85,7 +85,7 @@ section {
     font-weight: 500;
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
     body > .container {
         width: 100%;
         box-shadow: none;
