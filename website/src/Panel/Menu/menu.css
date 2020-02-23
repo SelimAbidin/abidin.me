@@ -1,0 +1,37 @@
+
+.menu {
+    width: 100%;
+    margin-top: 95px;
+}
+
+.menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 35px;
+}
+
+.menu ul li{
+    list-style: none;
+    font-size: 26px;
+    font-weight: 300;
+    color: #707070;
+    margin-bottom: 32px;
+    width: 100%;
+    text-align: end;
+}
+
+.menu ul li a {
+    color: #707070;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 700px) {
+    .menu {
+       display: none;
+    }
+  }

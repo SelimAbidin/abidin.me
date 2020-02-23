@@ -1,0 +1,22 @@
+
+.panel{
+    width: 350px;
+    min-width: 350px;
+    height: 100%;
+    border-right:1px solid #C4C4C4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+@media only screen and (max-width: 700px) {
+    .panel {
+        flex-direction: row;
+        align-items: flex-start;
+        height: auto;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #C4C4C4;
+    }
+  }

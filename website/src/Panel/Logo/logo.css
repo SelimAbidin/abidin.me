@@ -1,0 +1,35 @@
+
+.logo-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 315px;
+    padding-right: 35px;
+    
+}
+
+.logo-header {
+    font-size: 2em;
+    margin-top: 47px;
+}
+
+.name {
+    color: #707070;
+}
+
+.subheader {
+    color: #B5B5B5;
+}
+
+
+@media only screen and (max-width: 700px) {
+
+    .logo-content {
+        width: 100%;
+        padding: 27px 30px 13px 30px;
+    }
+
+    .logo-header {
+        margin-top: 0px;
+    }
+}
