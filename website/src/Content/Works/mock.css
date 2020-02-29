@@ -1,0 +1,21 @@
+
+.mock {
+    pointer-events: none;
+}
+
+.mock .anim {
+    background: linear-gradient(135deg, #bbb 20%, #f0f0f0 30%, #bbb 40%);
+    background-size: 1024px 1024px;
+    animation: AnimationName 2s linear infinite reverse;
+}
+
+@keyframes AnimationName {
+    0%{background-position:0% 0%}
+    100%{background-position:50% 100%} 
+}
+
+.mock .project-name {
+    height: 30px;
+    width: 100%;
+}
+
