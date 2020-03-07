@@ -22,7 +22,7 @@ describe('Pages Router', function () {
             })
     })
 
-    it.only('should show html', function () {
+    it('should show html', function () {
         request(app)
             .get('/pages')
             .set('Accept', 'application/json')

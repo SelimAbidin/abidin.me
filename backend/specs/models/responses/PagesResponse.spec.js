@@ -26,30 +26,30 @@ describe('PagesResponse', function () {
         assert.strictEqual(typeof formatResponse['text/html'], 'string')
     })
 
-    it('should format "json/application" should contain success property', function () {
+    it('should format "application/json" should contain success property', function () {
         const pageResponse = new PagesResponse()
         const formatResponse = pageResponse.toFormat()
-        const jsonApplication = formatResponse['json/application']
+        const jsonApplication = formatResponse['application/json']
         assert.ok(jsonApplication)
         assert.ok(Object.hasOwnProperty.call(jsonApplication, 'success'))
     })
 
-    it('should format "json/application" should contain pages property', function () {
+    it('should format "application/json" should contain pages property', function () {
         const pageResponse = new PagesResponse()
         const formatResponse = pageResponse.toFormat()
-        const jsonApplication = formatResponse['json/application']
+        const jsonApplication = formatResponse['application/json']
         assert.ok(jsonApplication)
         assert.ok(Object.hasOwnProperty.call(jsonApplication, 'pages'))
         assert.ok(Array.isArray(jsonApplication.pages))
     })
 
-    it('should profide pages in  "json/application" format', function () {
+    it('should profide pages in  "application/json" format', function () {
         const pageResponse = new PagesResponse()
         pageResponse.addPage('Test Page1', 'this is a test page1', 'img1')
         pageResponse.addPage('Test Page2', 'this is a test page2', 'img2')
         pageResponse.addPage('Test Page3', 'this is a test page3', 'img3')
         const formatResponse = pageResponse.toFormat()
-        const jsonApplication = formatResponse['json/application']
+        const jsonApplication = formatResponse['application/json']
         assert.strictEqual(jsonApplication.pages.length, 3)
     })
 
