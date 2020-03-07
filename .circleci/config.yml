@@ -18,8 +18,24 @@ jobs:
           key: v13-dependencies-{{ checksum "backend/package.json" }}
       - run: cd backend && yarn lint
       - run: cd backend && yarn test --watch=false --progress=false
+  website-build-and-test:
+    docker:
+      - image: circleci/node:10.16.3-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v13-dependencies-{{ checksum "website/package.json" }}
+          - v13-dependencies-
+      - run: cd website && yarn install
+      - save_cache:
+          paths:
+            - Frontend/node_modules
+          key: v13-dependencies-{{ checksum "website/package.json" }}
+      - run: cd website && yarn test:lin
 workflows:
   version: 2
   build_and_test:
     jobs:
       - backend-build-and-test
+      - website-build-and-test
