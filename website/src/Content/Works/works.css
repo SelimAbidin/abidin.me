@@ -22,7 +22,6 @@
     cursor: pointer;
 }
 
-
 .works .content {
     margin-top: 10px;
 }
@@ -39,8 +38,7 @@
     width: 245px;
     height: 235px;
     padding: 0px;
-    margin-right: 50px;
-    margin-bottom: 50px;
+    margin: 10px;
 }
 
 .works .content ul li:hover {

@@ -36,7 +36,6 @@ class Works extends Component {
             <section className="content">
                 <ul>
                     {
-
                         content.map((el, i) => {
                             if (el.isMock) {
                                 return <Mock key={i} />
@@ -44,10 +43,6 @@ class Works extends Component {
                                return <span>Hata</span>
                             }
                         })
-                        // Array.from({length: 10}, () => <li>
-                        //     <img className="thumb" />
-                        //     <h3 className="project-name">denemnenenjn jdfnwej nj</h3>
-                        // </li>)
                     }
                 </ul>
             </section>
