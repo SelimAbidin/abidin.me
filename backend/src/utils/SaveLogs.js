@@ -3,7 +3,7 @@ const fse = require('fs-extra')
 let fileEnsured = false
 function saveErrorLogs (error) {
     const date = new Date()
-    const filePath = `logs/${date.getFullYear()}-${date.getMonth()}-${date.getDay()}.log`
+    const filePath = `logs/${date.getFullYear()}-${date.getMonth()}-${date.getDate()}.log`
     if (!fileEnsured) {
         fse.ensureFile(filePath)
             .then(() => { fileEnsured = true })
