@@ -2,7 +2,7 @@ const request = require('supertest')
 const express = require('express')
 const assert = require('assert')
 const PagesRouter = require('../../src/routes/pages')
-const Responder = require('../../src/utils/Responder')
+const Responder = require('../../src/routes/responder')
 
 describe('Pages Router', function () {
     let app

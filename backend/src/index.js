@@ -8,7 +8,7 @@ const { join } = require('path')
 const AuthRouter = require('./routes/auth')
 const PagesRouter = require('./routes/pages')
 const { saveErrorLogs } = require('./utils/SaveLogs')
-const Responder = require('./utils/Responder')
+const Responder = require('./routes/responder')
 const VERSION = 'v1'
 
 app.use(`/rest/${VERSION}`, AuthRouter)
