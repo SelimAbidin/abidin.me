@@ -3,6 +3,7 @@ if (process.env.DISABLE_DOT_ENV === undefined || process.env.DISABLE_DOT_ENV !==
     dotenv.config()
 }
 const express = require('express')
+const helmet = require('helmet')
 const app = express()
 const { join } = require('path')
 const fse = require('fs-extra')
@@ -12,6 +13,9 @@ const Responder = require('./routes/responder')
 const { ErrorMiddleware } = require('./routes/error-middleware')
 require('./db/mongo/database')
 const VERSION = 'v1'
+
+// securitry
+app.use(helmet())
 
 app.use(`/rest/${VERSION}`, AuthRouter)
 app.use(`/rest/${VERSION}`, PagesRouter)
