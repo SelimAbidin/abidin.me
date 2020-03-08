@@ -24,7 +24,8 @@ jobs:
     - run: cd backend && yarn install
     - run: cd backend && yarn lint
     - run: cd backend && yarn test
-  
+    - run: cd backend && yarn cover
+    - run: cd backend && yarn coveralls
   frontend-build-and-test:
     runs-on: ubuntu-latest
     
