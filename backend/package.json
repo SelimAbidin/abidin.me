@@ -10,7 +10,7 @@
     "lint": "eslint src/**/*.js",
     "test": "mocha specs/**/*.spec.js",
     "cover": "nyc  --reporter=html --reporter=text yarn test",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
