@@ -9,7 +9,7 @@
     "start:dev": "nodemon src/index.js",
     "lint": "eslint src/**/*.js",
     "test": "mocha specs/**/*.spec.js",
-    "cover": "nyc  --reporter=html --reporter=text yarn test",
+    "cover": "nyc --reporter=html --reporter=text mocha specs/**/*.spec.js && nyc report --reporter=text-lcov | coveralls",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
