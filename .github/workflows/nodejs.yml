@@ -12,7 +12,22 @@ on:
 jobs:
   backend-build-and-test:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: cd backend && yarn install
+    - run: cd backend && yarn lint
+    - run: cd backend && yarn test
+  
+  frontend-build-and-test:
+    runs-on: ubuntu-latest
+    
     strategy:
       matrix:
         node-version: [10.x, 12.x]
@@ -23,8 +38,5 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: cd backend && yarn install
-    - run: cd backend && yarn lint
-    - run: cd backend && yarn test
-      env:
-        CI: true
+    - run: cd frontend && yarn install
+    - run: cd frontend && yarn test:lin
