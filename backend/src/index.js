@@ -10,6 +10,7 @@ const AuthRouter = require('./routes/auth')
 const PagesRouter = require('./routes/pages')
 const Responder = require('./routes/responder')
 const { ErrorMiddleware } = require('./routes/error-middleware')
+require('./db/mongo/database')
 const VERSION = 'v1'
 
 app.use(`/rest/${VERSION}`, AuthRouter)
