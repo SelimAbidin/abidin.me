@@ -38,5 +38,5 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: cd frontend && yarn install
-    - run: cd frontend && yarn test:lin
+    - run: cd website && yarn install
+    - run: cd website && yarn test:lin
