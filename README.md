@@ -1,1 +1,1 @@
-[![CircleCI](https://circleci.com/gh/SelimAbidin/abidin.me.svg?style=svg)](https://circleci.com/gh/SelimAbidin/abidin.me)
+![](https://github.com/SelimAbidin/abidin.me/workflows/Node.js%20CI/badge.svg)
