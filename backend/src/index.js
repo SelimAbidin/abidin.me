@@ -6,30 +6,40 @@ const express = require('express')
 const helmet = require('helmet')
 const app = express()
 const { join } = require('path')
-const fse = require('fs-extra')
 const AuthRouter = require('./routes/auth')
-const PagesRouter = require('./routes/pages')
+const WorksRouter = require('./routes/works')
 const Responder = require('./routes/responder')
 const { ErrorMiddleware } = require('./routes/error-middleware')
-require('./db/mongo/database')
+const { Postgres } = require('./db/postgres/index')
+const { registerByKey } = require('./utils/provider')
 const VERSION = 'v1'
+
+registerByKey('database', new Postgres())
 
 // securitry
 app.use(helmet())
 
+if (process.env.DEV === 'true') {
+    app.use(function (req, res, next) {
+        res.header('Access-Control-Allow-Origin', '*')
+        next()
+    })
+}
+
 app.use(`/rest/${VERSION}`, AuthRouter)
-app.use(`/rest/${VERSION}`, PagesRouter)
+app.use(`/rest/${VERSION}`, WorksRouter)
 app.use(`/rest/${VERSION}`, Responder)
 
 /**
  * 404 handling page. Responses should be handled before this part
  */
 app.all('*', (_req, res, next) => {
-    fse.createReadStream(join(__dirname, '/views/404/index2.html'))
-        .on('error', (err) => {
-            next(err)
+    res.status(404)
+        .sendFile(join(__dirname, '/views/404/index.html'), (err) => {
+            if (err) {
+                next(err)
+            }
         })
-        .pipe(res)
 })
 
 /**

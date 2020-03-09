@@ -39,11 +39,13 @@
     height: 235px;
     padding: 0px;
     margin: 10px;
+    cursor: pointer;
+
 }
 
-.works .content ul li:hover {
+/* .works .content ul li:hover {
     border: solid 1px #B5B5B5;
-}
+} */
 
 .works .content ul li .thumb {
     background-color: #B5B5B5;
@@ -53,9 +55,3 @@
     flex-direction: column;
 }
 
-.works .content ul li .project-name {
-    margin-top: 5px;
-    padding: 5px;
-    font-size: 22px;
-    font-weight: 300;
-}

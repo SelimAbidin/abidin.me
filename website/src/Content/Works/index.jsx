@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Mock } from './Mock'
+import { Worknail } from './Worknail'
+import { HOST } from '../../env'
 import './works.css'
 
 class Works extends Component {
@@ -16,7 +18,21 @@ class Works extends Component {
     }
 
     fetchData() {
-        fetch('/rest/v1/deneme')
+        fetch(HOST + '/rest/v1/works', {
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(e => e.json())
+        .then(result => {
+
+            if (result && result.success) {
+                this.setState({
+                    content: result.works
+                })
+            }
+
+        } )
     }
 
     
@@ -40,7 +56,7 @@ class Works extends Component {
                             if (el.isMock) {
                                 return <Mock key={i} />
                             } else {
-                               return <span>Hata</span>
+                               return <Worknail key={el.id} title={el.title} description={el.description}></Worknail>
                             }
                         })
                     }

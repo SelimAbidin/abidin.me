@@ -2,6 +2,10 @@ const fse = require('fs-extra')
 
 let fileEnsured = false
 function saveErrorLogs (error) {
+
+    if (process.env.DEV === 'true') {
+        console.log(error)
+    }
     const date = new Date()
     const filePath = `logs/${date.getFullYear()}-${date.getMonth()}-${date.getDate()}.log`
     if (!fileEnsured) {
@@ -16,6 +20,7 @@ function saveErrorLogs (error) {
     ${error.message}
     ${error.stack.toString()}
     `
+
     fse.appendFile(filePath, errorLogs)
         .catch(e => console.log(e))
 }

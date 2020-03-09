@@ -1,8 +1,4 @@
-const { NotImplemented } = require('../errors/NotImplemented')
-
-function notImplemented () {
-    throw new NotImplemented()
-}
+const { notImplemented } = require('../../utils')
 
 class IResponse { }
 

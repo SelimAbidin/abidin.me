@@ -1,0 +1,12 @@
+
+.worknail .project-name{
+    font-size: 26px;
+    color: #565656;
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 22px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+}
+
