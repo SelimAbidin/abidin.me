@@ -38,7 +38,7 @@ h1, h3, p {
 }
 
 .company{
-    color: #6d6e70;
+    color: #363744;
     font-size: 25px;
 }
 
@@ -82,6 +82,11 @@ section {
 }
 
 .job-header {
+    font-weight: 500;
+}
+
+.portfolio-link {
+    text-decoration: underline;
     font-weight: 500;
 }
 
